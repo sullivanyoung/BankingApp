@@ -40,13 +40,13 @@ namespace BankingApplication
             this.btnYear = new System.Windows.Forms.Button();
             this.btnWeek = new System.Windows.Forms.Button();
             this.gpbCompanies = new System.Windows.Forms.GroupBox();
-            this.btnMonth = new System.Windows.Forms.Button();
-            this.cbxAcer = new System.Windows.Forms.CheckBox();
-            this.cbxApple = new System.Windows.Forms.CheckBox();
-            this.cbxFacebook = new System.Windows.Forms.CheckBox();
-            this.cbxIntel = new System.Windows.Forms.CheckBox();
-            this.cbxMicrosoft = new System.Windows.Forms.CheckBox();
             this.cbxRyzen = new System.Windows.Forms.CheckBox();
+            this.cbxMicrosoft = new System.Windows.Forms.CheckBox();
+            this.cbxIntel = new System.Windows.Forms.CheckBox();
+            this.cbxFacebook = new System.Windows.Forms.CheckBox();
+            this.cbxApple = new System.Windows.Forms.CheckBox();
+            this.cbxAcer = new System.Windows.Forms.CheckBox();
+            this.btnMonth = new System.Windows.Forms.Button();
             this.gpbCompanies.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -102,7 +102,7 @@ namespace BankingApplication
             this.lbxOutput.FormattingEnabled = true;
             this.lbxOutput.Location = new System.Drawing.Point(481, 86);
             this.lbxOutput.Name = "lbxOutput";
-            this.lbxOutput.Size = new System.Drawing.Size(170, 290);
+            this.lbxOutput.Size = new System.Drawing.Size(342, 251);
             this.lbxOutput.TabIndex = 31;
             // 
             // txtInvest
@@ -114,12 +114,13 @@ namespace BankingApplication
             // 
             // btnInvest
             // 
-            this.btnInvest.Location = new System.Drawing.Point(322, 302);
+            this.btnInvest.Location = new System.Drawing.Point(308, 302);
             this.btnInvest.Name = "btnInvest";
-            this.btnInvest.Size = new System.Drawing.Size(75, 23);
+            this.btnInvest.Size = new System.Drawing.Size(100, 32);
             this.btnInvest.TabIndex = 33;
             this.btnInvest.Text = "Invest";
             this.btnInvest.UseVisualStyleBackColor = true;
+            this.btnInvest.Click += new System.EventHandler(this.btnInvest_Click);
             // 
             // btnYear
             // 
@@ -154,54 +155,15 @@ namespace BankingApplication
             this.gpbCompanies.TabStop = false;
             this.gpbCompanies.Text = "Companies";
             // 
-            // btnMonth
+            // cbxRyzen
             // 
-            this.btnMonth.Location = new System.Drawing.Point(322, 446);
-            this.btnMonth.Name = "btnMonth";
-            this.btnMonth.Size = new System.Drawing.Size(100, 37);
-            this.btnMonth.TabIndex = 38;
-            this.btnMonth.Text = "1 Month";
-            this.btnMonth.UseVisualStyleBackColor = true;
-            // 
-            // cbxAcer
-            // 
-            this.cbxAcer.AutoSize = true;
-            this.cbxAcer.Location = new System.Drawing.Point(7, 20);
-            this.cbxAcer.Name = "cbxAcer";
-            this.cbxAcer.Size = new System.Drawing.Size(48, 17);
-            this.cbxAcer.TabIndex = 0;
-            this.cbxAcer.Text = "Acer";
-            this.cbxAcer.UseVisualStyleBackColor = true;
-            // 
-            // cbxApple
-            // 
-            this.cbxApple.AutoSize = true;
-            this.cbxApple.Location = new System.Drawing.Point(7, 44);
-            this.cbxApple.Name = "cbxApple";
-            this.cbxApple.Size = new System.Drawing.Size(53, 17);
-            this.cbxApple.TabIndex = 1;
-            this.cbxApple.Text = "Apple";
-            this.cbxApple.UseVisualStyleBackColor = true;
-            // 
-            // cbxFacebook
-            // 
-            this.cbxFacebook.AutoSize = true;
-            this.cbxFacebook.Location = new System.Drawing.Point(7, 68);
-            this.cbxFacebook.Name = "cbxFacebook";
-            this.cbxFacebook.Size = new System.Drawing.Size(74, 17);
-            this.cbxFacebook.TabIndex = 2;
-            this.cbxFacebook.Text = "Facebook";
-            this.cbxFacebook.UseVisualStyleBackColor = true;
-            // 
-            // cbxIntel
-            // 
-            this.cbxIntel.AutoSize = true;
-            this.cbxIntel.Location = new System.Drawing.Point(7, 92);
-            this.cbxIntel.Name = "cbxIntel";
-            this.cbxIntel.Size = new System.Drawing.Size(46, 17);
-            this.cbxIntel.TabIndex = 3;
-            this.cbxIntel.Text = "Intel";
-            this.cbxIntel.UseVisualStyleBackColor = true;
+            this.cbxRyzen.AutoSize = true;
+            this.cbxRyzen.Location = new System.Drawing.Point(7, 140);
+            this.cbxRyzen.Name = "cbxRyzen";
+            this.cbxRyzen.Size = new System.Drawing.Size(56, 17);
+            this.cbxRyzen.TabIndex = 5;
+            this.cbxRyzen.Text = "Ryzen";
+            this.cbxRyzen.UseVisualStyleBackColor = true;
             // 
             // cbxMicrosoft
             // 
@@ -213,15 +175,54 @@ namespace BankingApplication
             this.cbxMicrosoft.Text = "Microsoft";
             this.cbxMicrosoft.UseVisualStyleBackColor = true;
             // 
-            // cbxRyzen
+            // cbxIntel
             // 
-            this.cbxRyzen.AutoSize = true;
-            this.cbxRyzen.Location = new System.Drawing.Point(7, 140);
-            this.cbxRyzen.Name = "cbxRyzen";
-            this.cbxRyzen.Size = new System.Drawing.Size(56, 17);
-            this.cbxRyzen.TabIndex = 5;
-            this.cbxRyzen.Text = "Ryzen";
-            this.cbxRyzen.UseVisualStyleBackColor = true;
+            this.cbxIntel.AutoSize = true;
+            this.cbxIntel.Location = new System.Drawing.Point(7, 92);
+            this.cbxIntel.Name = "cbxIntel";
+            this.cbxIntel.Size = new System.Drawing.Size(46, 17);
+            this.cbxIntel.TabIndex = 3;
+            this.cbxIntel.Text = "Intel";
+            this.cbxIntel.UseVisualStyleBackColor = true;
+            // 
+            // cbxFacebook
+            // 
+            this.cbxFacebook.AutoSize = true;
+            this.cbxFacebook.Location = new System.Drawing.Point(7, 68);
+            this.cbxFacebook.Name = "cbxFacebook";
+            this.cbxFacebook.Size = new System.Drawing.Size(74, 17);
+            this.cbxFacebook.TabIndex = 2;
+            this.cbxFacebook.Text = "Facebook";
+            this.cbxFacebook.UseVisualStyleBackColor = true;
+            // 
+            // cbxApple
+            // 
+            this.cbxApple.AutoSize = true;
+            this.cbxApple.Location = new System.Drawing.Point(7, 44);
+            this.cbxApple.Name = "cbxApple";
+            this.cbxApple.Size = new System.Drawing.Size(53, 17);
+            this.cbxApple.TabIndex = 1;
+            this.cbxApple.Text = "Apple";
+            this.cbxApple.UseVisualStyleBackColor = true;
+            // 
+            // cbxAcer
+            // 
+            this.cbxAcer.AutoSize = true;
+            this.cbxAcer.Location = new System.Drawing.Point(7, 20);
+            this.cbxAcer.Name = "cbxAcer";
+            this.cbxAcer.Size = new System.Drawing.Size(48, 17);
+            this.cbxAcer.TabIndex = 0;
+            this.cbxAcer.Text = "Acer";
+            this.cbxAcer.UseVisualStyleBackColor = true;
+            // 
+            // btnMonth
+            // 
+            this.btnMonth.Location = new System.Drawing.Point(322, 446);
+            this.btnMonth.Name = "btnMonth";
+            this.btnMonth.Size = new System.Drawing.Size(100, 37);
+            this.btnMonth.TabIndex = 38;
+            this.btnMonth.Text = "1 Month";
+            this.btnMonth.UseVisualStyleBackColor = true;
             // 
             // Stocks
             // 
