@@ -25,6 +25,7 @@ namespace BankingApplication
 {
     public partial class Stocks : Form
     {
+
         public Stocks()
         {
             InitializeComponent();
@@ -32,16 +33,15 @@ namespace BankingApplication
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-            lblCurrentBalance.Text = "";
             lbxOutput.Items.Clear();
             txtInvest.Clear();
-            rdnAcer.Checked = false;
-            rdnApple.Checked = false;
-            rdnFacebook.Checked = false;
-            rdnIntel.Checked = false;
-            rdnMicrosoft.Checked = false;
-            rdnRyzen.Checked = false;
-            
+            cbxAcer.Checked = false;
+            cbxApple.Checked = false;
+            cbxFacebook.Checked = false;
+            cbxIntel.Checked = false;
+            cbxMicrosoft.Checked = false;
+            cbxRyzen.Checked = false;
+
         }
 
         private void btnHome_Click(object sender, EventArgs e)
@@ -56,9 +56,9 @@ namespace BankingApplication
             Application.Exit();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void Stocks_Load(object sender, EventArgs e)
         {
-
+            lblCurrentBalance.Text = "$" +  Convert.ToString(Home.currentBalance);
         }
     }
 }
