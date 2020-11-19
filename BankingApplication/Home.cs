@@ -12,7 +12,7 @@ namespace BankingApplication
 {
     public partial class Home : Form
     {
-        public decimal currentBalance = 0;
+        public static decimal currentBalance = 0;
         decimal interest = .05M;
         public Home()
         {
