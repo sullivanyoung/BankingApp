@@ -25,7 +25,7 @@ namespace BankingApplication
 {
     public partial class Stocks : Form
     {
-        public static double[] percents = { -.10, -.05, -.01, .01, .05, .07, .10, .14, .18, .25};
+        public static double[] percents = { -.10, -.05, -.01, .01, .05, .07, .10, .14, .18, .25 };
         public static Random random = new Random();
         public Stocks()
         {
@@ -58,7 +58,7 @@ namespace BankingApplication
 
         private void Stocks_Load(object sender, EventArgs e)
         {
-            lblCurrentBalance.Text = "$" +  Convert.ToString(Home.currentBalance);
+            lblCurrentBalance.Text = "$" + Convert.ToString(Home.currentBalance);
         }
 
         private void btnInvest_Click(object sender, EventArgs e)
@@ -70,9 +70,9 @@ namespace BankingApplication
             double microsoft = percents[random.Next(percents.Length)];
             double ryzen = percents[random.Next(percents.Length)];
 
-            if(cbxAcer.Checked)
+            if (cbxAcer.Checked)
             {
-                if(cbxApple.Checked)
+                if (cbxApple.Checked)
                 {
                     if (cbxFacebook.Checked)
                     {
@@ -82,62 +82,406 @@ namespace BankingApplication
                             {
                                 if (cbxRyzen.Checked)
                                 {
-                                    MessageBox.Show("Your Return: " + Convert.ToString(((acer + apple + facebook + intel + microsoft + ryzen)/6) * 100) + "%");
+                                    MessageBox.Show("Your Return: " + Convert.ToString(((acer + apple + facebook + intel + microsoft + ryzen) / 6) * 100) + "%");
                                     lbxOutput.Items.Add($"You purchased: Acer, Apple, Facebook, Intel, Microsoft, and Ryzen Stock.");
                                 }
                                 else
                                 {
-                                    MessageBox.Show("Your Return: " + Convert.ToString(((acer + apple + facebook + intel + microsoft)/5) * 100) + "%");
+                                    MessageBox.Show("Your Return: " + Convert.ToString(((acer + apple + facebook + intel + microsoft) / 5) * 100) + "%");
                                     lbxOutput.Items.Add($"You purchased: Acer, Apple, Facebook, Intel, and Microsoft Stock.");
                                 }
                             }
+                            else if (cbxRyzen.Checked)
+                            {
+                                MessageBox.Show("Your Return: " + Convert.ToString(((acer + apple + facebook + intel + ryzen) / 5) * 100) + "%");
+                                lbxOutput.Items.Add($"You purchased: Acer, Apple, Facebook, Intel, and Ryzen Stock.");
+                            }
                             else
                             {
-                                MessageBox.Show("Your Return: " + Convert.ToString(((acer + apple + facebook + intel)/4) * 100) + "%");
+                                MessageBox.Show("Your Return: " + Convert.ToString(((acer + apple + facebook + intel) / 4) * 100) + "%");
                                 lbxOutput.Items.Add($"You purchased: Acer, Apple, Facebook, and Intel Stock.");
                             }
                         }
+                        else if (cbxMicrosoft.Checked)
+                        {
+                            if (cbxRyzen.Checked)
+                            {
+                                MessageBox.Show("Your Return: " + Convert.ToString(((acer + apple + facebook + microsoft + ryzen) / 5) * 100) + "%");
+                                lbxOutput.Items.Add($"You purchased: Acer, Apple, Facebook, Microsoft, and Ryzen Stock.");
+                            }
+                            else
+                            {
+                                MessageBox.Show("Your Return: " + Convert.ToString(((acer + apple + facebook + microsoft) / 4) * 100) + "%");
+                                lbxOutput.Items.Add($"You purchased: Acer, Apple, Facebook, and Microsoft Stock.");
+                            }
+                        }
+                        else if (cbxRyzen.Checked)
+                        {
+                            MessageBox.Show("Your Return: " + Convert.ToString(((acer + apple + facebook + ryzen) / 4) * 100) + "%");
+                            lbxOutput.Items.Add($"You purchased: Acer, Apple, Facebook, and Ryzen Stock.");
+                        }
                         else
                         {
-                            MessageBox.Show("Your Return: " + Convert.ToString(((acer + apple + facebook)/3) * 100) + "%");
+                            MessageBox.Show("Your Return: " + Convert.ToString(((acer + apple + facebook) / 3) * 100) + "%");
                             lbxOutput.Items.Add($"You purchased: Acer, Apple, and Facebook Stock.");
                         }
                     }
+                    else if (cbxIntel.Checked)
+                    {
+                        if (cbxMicrosoft.Checked)
+                        {
+                            if (cbxRyzen.Checked)
+                            {
+                                MessageBox.Show("Your Return: " + Convert.ToString(((acer + apple + intel + microsoft + ryzen) / 5) * 100) + "%");
+                                lbxOutput.Items.Add($"You purchased: Acer, Apple, Intel, Microsoft, and Ryzen Stock.");
+                            }
+                            else
+                            {
+                                MessageBox.Show("Your Return: " + Convert.ToString(((acer + apple + intel + microsoft) / 4) * 100) + "%");
+                                lbxOutput.Items.Add($"You purchased: Acer, Apple, Intel, and Microsoft Stock.");
+                            }
+                        }
+                        else if (cbxRyzen.Checked)
+                        {
+                            MessageBox.Show("Your Return: " + Convert.ToString(((acer + apple + intel + ryzen) / 4) * 100) + "%");
+                            lbxOutput.Items.Add($"You purchased: Acer, Apple, Intel, and Ryzen Stock.");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Your Return: " + Convert.ToString(((acer + apple + intel) / 3) * 100) + "%");
+                            lbxOutput.Items.Add($"You purchased: Acer, Apple, and Intel Stock.");
+                        }
+                    }
+                    else if (cbxMicrosoft.Checked)
+                    {
+                        if (cbxRyzen.Checked)
+                        {
+                            MessageBox.Show("Your Return: " + Convert.ToString(((acer + apple + microsoft + ryzen) / 4) * 100) + "%");
+                            lbxOutput.Items.Add($"You purchased: Acer, Apple, Microsoft, and Ryzen Stock.");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Your Return: " + Convert.ToString(((acer + apple + microsoft) / 3) * 100) + "%");
+                            lbxOutput.Items.Add($"You purchased: Acer, Apple,, and Microsoft Stock.");
+                        }
+                    }
+                    else if (cbxRyzen.Checked)
+                    {
+                        MessageBox.Show("Your Return: " + Convert.ToString(((acer + apple + ryzen) / 3) * 100) + "%");
+                        lbxOutput.Items.Add($"You purchased: Acer, Apple, and Ryzen Stock.");
+                    }
                     else
                     {
-                        MessageBox.Show("Your Return: " + Convert.ToString(((acer + apple)/2) * 100) + "%");
-                        lbxOutput.Items.Add($"You purchased: Acer and Apple Stock.");
+                        MessageBox.Show("Your Return: " + Convert.ToString(((acer + apple) / 2) * 100) + "%");
+                        lbxOutput.Items.Add($"You purchased: Acer, and Apple Stock.");
                     }
+                }
+                else if (cbxFacebook.Checked)
+                {
+                    if (cbxIntel.Checked)
+                    {
+                        if (cbxMicrosoft.Checked)
+                        {
+                            if (cbxRyzen.Checked)
+                            {
+                                MessageBox.Show("Your Return: " + Convert.ToString(((acer + facebook + intel + microsoft + ryzen) / 5) * 100) + "%");
+                                lbxOutput.Items.Add($"You purchased: Acer, Facebook, Intel, Microsoft, and Ryzen Stock.");
+                            }
+                            else
+                            {
+                                MessageBox.Show("Your Return: " + Convert.ToString(((acer + facebook + intel + microsoft) / 4) * 100) + "%");
+                                lbxOutput.Items.Add($"You purchased: Acer, Facebook, Intel, and Microsoft Stock.");
+                            }
+                        }
+                        else if (cbxRyzen.Checked)
+                        {
+                            MessageBox.Show("Your Return: " + Convert.ToString(((acer + facebook + intel + ryzen) / 4) * 100) + "%");
+                            lbxOutput.Items.Add($"You purchased: Acer, Facebook, Intel, and Ryzen Stock.");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Your Return: " + Convert.ToString(((acer + facebook + intel) / 3) * 100) + "%");
+                            lbxOutput.Items.Add($"You purchased: Acer, Facebook, and Intel Stock.");
+                        }
+                    }
+                    else if (cbxMicrosoft.Checked)
+                    {
+                        if (cbxRyzen.Checked)
+                        {
+                            MessageBox.Show("Your Return: " + Convert.ToString(((acer + facebook + microsoft + ryzen) / 4) * 100) + "%");
+                            lbxOutput.Items.Add($"You purchased: Acer, Facebook, Microsoft, and Ryzen Stock.");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Your Return: " + Convert.ToString(((acer + facebook + microsoft) / 3) * 100) + "%");
+                            lbxOutput.Items.Add($"You purchased: Acer, Facebook, and Microsoft Stock.");
+                        }
+                    }
+                    else if (cbxRyzen.Checked)
+                    {
+                        MessageBox.Show("Your Return: " + Convert.ToString(((acer + facebook + ryzen) / 3) * 100) + "%");
+                        lbxOutput.Items.Add($"You purchased: Acer, Facebook, and Ryzen Stock.");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Your Return: " + Convert.ToString(((acer + facebook) / 2) * 100) + "%");
+                        lbxOutput.Items.Add($"You purchased: Acer and Facebook Stock.");
+                    }
+                }
+                else if (cbxIntel.Checked)
+                {
+                    if (cbxMicrosoft.Checked)
+                    {
+                        if (cbxRyzen.Checked)
+                        {
+                            MessageBox.Show("Your Return: " + Convert.ToString(((acer + intel + microsoft + ryzen) / 4) * 100) + "%");
+                            lbxOutput.Items.Add($"You purchased: Acer, Intel, Microsoft, and Ryzen Stock.");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Your Return: " + Convert.ToString(((acer + intel + microsoft) / 3) * 100) + "%");
+                            lbxOutput.Items.Add($"You purchased: Acer, Intel, and Microsoft Stock.");
+                        }
+                    }
+                    else if (cbxRyzen.Checked)
+                    {
+                        MessageBox.Show("Your Return: " + Convert.ToString(((acer + intel + ryzen) / 3) * 100) + "%");
+                        lbxOutput.Items.Add($"You purchased: Acer, Intel, and Ryzen Stock.");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Your Return: " + Convert.ToString(((acer + intel) / 2) * 100) + "%");
+                        lbxOutput.Items.Add($"You purchased: Acer and Intel Stock.");
+                    }
+                }
+                else if (cbxMicrosoft.Checked)
+                {
+                    if (cbxRyzen.Checked)
+                    {
+                        MessageBox.Show("Your Return: " + Convert.ToString(((acer + microsoft + ryzen) / 3) * 100) + "%");
+                        lbxOutput.Items.Add($"You purchased: Acer, Microsoft, and Ryzen Stock.");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Your Return: " + Convert.ToString(((acer + microsoft) / 2) * 100) + "%");
+                        lbxOutput.Items.Add($"You purchased: Acer, and Microsoft Stock.");
+                    }
+                }
+                else if (cbxRyzen.Checked)
+                {
+                    MessageBox.Show("Your Return: " + Convert.ToString(((acer + ryzen) / 2) * 100) + "%");
+                    lbxOutput.Items.Add($"You purchased: Acer and Ryzen Stock.");
                 }
                 else
                 {
-                    MessageBox.Show("Acer Stock: " + Convert.ToString(acer * 100) + "%");
+                    MessageBox.Show("Your Return: " + Convert.ToString((acer * 100) + "%"));
                     lbxOutput.Items.Add($"You purchased: Acer Stock.");
                 }
             }
-            else if (cbxApple.Checked)
-            {
-                MessageBox.Show("Apple Stock: " + Convert.ToString(apple * 100) + "%");
+            else if(cbxApple.Checked)
+                {
+                if (cbxFacebook.Checked)
+                {
+                    if (cbxIntel.Checked)
+                    {
+                        if (cbxMicrosoft.Checked)
+                        {
+                            if (cbxRyzen.Checked)
+                            {
+                                MessageBox.Show("Your Return: " + Convert.ToString(((apple + facebook + intel + microsoft + ryzen) / 5) * 100) + "%");
+                                lbxOutput.Items.Add($"You purchased: Apple, Facebook, Intel, Microsoft, and Ryzen Stock.");
+                            }
+                            else
+                            {
+                                MessageBox.Show("Your Return: " + Convert.ToString(((apple + facebook + intel + microsoft) / 4) * 100) + "%");
+                                lbxOutput.Items.Add($"You purchased: Apple, Facebook, Intel, and Microsoft Stock.");
+                            }
+                        }
+                        else if (cbxRyzen.Checked)
+                        {
+                            MessageBox.Show("Your Return: " + Convert.ToString(((apple + facebook + intel + ryzen) / 4) * 100) + "%");
+                            lbxOutput.Items.Add($"You purchased: Apple, Facebook, Intel, and Ryzen Stock.");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Your Return: " + Convert.ToString(((apple + facebook + intel) / 3) * 100) + "%");
+                            lbxOutput.Items.Add($"You purchased: Apple, Facebook, and Intel Stock.");
+                        }
+                    }
+                    else if (cbxMicrosoft.Checked)
+                    {
+                        if (cbxRyzen.Checked)
+                        {
+                            MessageBox.Show("Your Return: " + Convert.ToString(((apple + facebook + microsoft + ryzen) / 4) * 100) + "%");
+                            lbxOutput.Items.Add($"You purchased:Apple, Facebook, Microsoft, and Ryzen Stock.");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Your Return: " + Convert.ToString(((apple + facebook + microsoft) / 3) * 100) + "%");
+                            lbxOutput.Items.Add($"You purchased:Apple, Facebook, and Microsoft Stock.");
+                        }
+                    }
+                    else if (cbxRyzen.Checked)
+                    {
+                        MessageBox.Show("Your Return: " + Convert.ToString(((apple + facebook + ryzen) / 3) * 100) + "%");
+                        lbxOutput.Items.Add($"You purchased:Apple, Facebook, and Ryzen Stock.");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Your Return: " + Convert.ToString(((apple + facebook) / 2) * 100) + "%");
+                        lbxOutput.Items.Add($"You purchased: Apple, and Facebook Stock.");
+                    }
+                }
+                else if (cbxIntel.Checked)
+                {
+                    if (cbxMicrosoft.Checked)
+                    {
+                        if (cbxRyzen.Checked)
+                        {
+                            MessageBox.Show("Your Return: " + Convert.ToString(((apple + intel + microsoft + ryzen) / 4) * 100) + "%");
+                            lbxOutput.Items.Add($"You purchased: Apple, Intel, Microsoft, and Ryzen Stock.");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Your Return: " + Convert.ToString(((apple + intel + microsoft) / 3) * 100) + "%");
+                            lbxOutput.Items.Add($"You purchased: Apple, Intel, and Microsoft Stock.");
+                        }
+                    }
+                    else if (cbxRyzen.Checked)
+                    {
+                        MessageBox.Show("Your Return: " + Convert.ToString(((apple + intel + ryzen) / 3) * 100) + "%");
+                        lbxOutput.Items.Add($"You purchased: Apple, Intel, and Ryzen Stock.");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Your Return: " + Convert.ToString(((apple + intel) / 2) * 100) + "%");
+                        lbxOutput.Items.Add($"You purchased: Apple, and Intel Stock.");
+                    }
+                }
+                else if (cbxMicrosoft.Checked)
+                {
+                    if (cbxRyzen.Checked)
+                    {
+                        MessageBox.Show("Your Return: " + Convert.ToString(((apple + microsoft + ryzen) / 3) * 100) + "%");
+                        lbxOutput.Items.Add($"You purchased: Apple, Microsoft, and Ryzen Stock.");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Your Return: " + Convert.ToString(((apple + microsoft) / 2) * 100) + "%");
+                        lbxOutput.Items.Add($"You purchased: Apple and Microsoft Stock.");
+                    }
+                }
+                else if (cbxRyzen.Checked)
+                {
+                    MessageBox.Show("Your Return: " + Convert.ToString(((apple + ryzen) / 2) * 100) + "%");
+                    lbxOutput.Items.Add($"You purchased: Apple, and Ryzen Stock.");
+                }
+                else
+                {
+                    MessageBox.Show("Your Return: " + Convert.ToString((apple) * 100) + "%");
+                    lbxOutput.Items.Add($"You purchased: Apple Stock.");
+                }
             }
             else if (cbxFacebook.Checked)
             {
-                MessageBox.Show("Facebook Stock: " + Convert.ToString(facebook * 100) + "%");
+                if (cbxIntel.Checked)
+                {
+                    if (cbxMicrosoft.Checked)
+                    {
+                        if (cbxRyzen.Checked)
+                        {
+                            MessageBox.Show("Your Return: " + Convert.ToString(((facebook + intel + microsoft + ryzen) / 4) * 100) + "%");
+                            lbxOutput.Items.Add($"You purchased: Facebook, Intel, Microsoft, and Ryzen Stock.");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Your Return: " + Convert.ToString(((facebook + intel + microsoft) / 3) * 100) + "%");
+                            lbxOutput.Items.Add($"You purchased: Facebook, Intel, and Microsoft Stock.");
+                        }
+                    }
+                    else if (cbxRyzen.Checked)
+                    {
+                        MessageBox.Show("Your Return: " + Convert.ToString(((facebook + intel + ryzen) / 3) * 100) + "%");
+                        lbxOutput.Items.Add($"You purchased: Facebook, Intel, and Ryzen Stock.");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Your Return: " + Convert.ToString(((facebook + intel) / 2) * 100) + "%");
+                        lbxOutput.Items.Add($"You purchased: Facebook and Intel Stock.");
+                    }
+                }
+                else if (cbxMicrosoft.Checked)
+                {
+                    if (cbxRyzen.Checked)
+                    {
+                        MessageBox.Show("Your Return: " + Convert.ToString(((facebook + microsoft + ryzen) / 3) * 100) + "%");
+                        lbxOutput.Items.Add($"You purchased: Facebook, Microsoft, and Ryzen Stock.");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Your Return: " + Convert.ToString(((facebook + microsoft) / 2) * 100) + "%");
+                        lbxOutput.Items.Add($"You purchased: Facebook and Microsoft Stock.");
+                    }
+                }
+                else if (cbxRyzen.Checked)
+                {
+                    MessageBox.Show("Your Return: " + Convert.ToString(((facebook + ryzen) / 2) * 100) + "%");
+                    lbxOutput.Items.Add($"You purchased: Facebook and Ryzen Stock.");
+                }
+                else
+                {
+                    MessageBox.Show("Your Return: " + Convert.ToString((facebook) * 100) + "%");
+                    lbxOutput.Items.Add($"You purchased: Facebook Stock.");
+                }
             }
             else if (cbxIntel.Checked)
             {
-                MessageBox.Show("Intel Stock: " + Convert.ToString(intel * 100) + "%");
+                if (cbxMicrosoft.Checked)
+                {
+                    if (cbxRyzen.Checked)
+                    {
+                        MessageBox.Show("Your Return: " + Convert.ToString(((intel + microsoft + ryzen) / 3) * 100) + "%");
+                        lbxOutput.Items.Add($"You purchased: Intel, Microsoft, and Ryzen Stock.");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Your Return: " + Convert.ToString(((intel + microsoft) / 2) * 100) + "%");
+                        lbxOutput.Items.Add($"You purchased: Intel, and Microsoft Stock.");
+                    }
+                }
+                else if (cbxRyzen.Checked)
+                {
+                    MessageBox.Show("Your Return: " + Convert.ToString(((intel + ryzen) / 2) * 100) + "%");
+                    lbxOutput.Items.Add($"You purchased: Intel, and Ryzen Stock.");
+                }
+                else
+                {
+                    MessageBox.Show("Your Return: " + Convert.ToString(((intel)) * 100) + "%");
+                    lbxOutput.Items.Add($"You purchased: Intel Stock.");
+                }
             }
             else if (cbxMicrosoft.Checked)
             {
-                MessageBox.Show("Microsoft Stock: " + Convert.ToString(microsoft * 100) + "%");
+                if (cbxRyzen.Checked)
+                {
+                    MessageBox.Show("Your Return: " + Convert.ToString(((microsoft + ryzen) / 2) * 100) + "%");
+                    lbxOutput.Items.Add($"You purchased: Microsoft and Ryzen Stock.");
+                }
+                else
+                {
+                    MessageBox.Show("Your Return: " + Convert.ToString((microsoft) * 100) + "%");
+                    lbxOutput.Items.Add($"You purchased: Microsoft Stock.");
+                }
             }
             else if (cbxRyzen.Checked)
             {
-                MessageBox.Show("Ryzen Stock: " + Convert.ToString(ryzen * 100) + "%");
+                MessageBox.Show("Your Return: " + Convert.ToString((ryzen) * 100) + "%");
+                lbxOutput.Items.Add($"You purchased: Ryzen Stock.");
             }
             else
             {
-                MessageBox.Show("No selected stock.");
+                MessageBox.Show("Please select a stock");
+                lbxOutput.Items.Add($"You did not purchase any stock.");
             }
 
             random = new Random();
