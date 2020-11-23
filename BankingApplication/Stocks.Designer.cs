@@ -150,7 +150,7 @@ namespace BankingApplication
             this.gpbCompanies.Controls.Add(this.cbxAcer);
             this.gpbCompanies.Location = new System.Drawing.Point(135, 133);
             this.gpbCompanies.Name = "gpbCompanies";
-            this.gpbCompanies.Size = new System.Drawing.Size(82, 192);
+            this.gpbCompanies.Size = new System.Drawing.Size(82, 160);
             this.gpbCompanies.TabIndex = 37;
             this.gpbCompanies.TabStop = false;
             this.gpbCompanies.Text = "Companies";

@@ -115,10 +115,11 @@ namespace BankingApplication
             // lbxBalance
             // 
             this.lbxBalance.FormattingEnabled = true;
-            this.lbxBalance.Location = new System.Drawing.Point(89, 116);
+            this.lbxBalance.Location = new System.Drawing.Point(45, 112);
             this.lbxBalance.Name = "lbxBalance";
-            this.lbxBalance.Size = new System.Drawing.Size(170, 342);
+            this.lbxBalance.Size = new System.Drawing.Size(248, 342);
             this.lbxBalance.TabIndex = 8;
+            this.lbxBalance.SelectedIndexChanged += new System.EventHandler(this.lbxBalance_SelectedIndexChanged);
             // 
             // lblBalance
             // 
@@ -206,11 +207,11 @@ namespace BankingApplication
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(128, 521);
+            this.label6.Location = new System.Drawing.Point(66, 521);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(59, 13);
+            this.label6.Size = new System.Drawing.Size(179, 13);
             this.label6.TabIndex = 18;
-            this.label6.Text = "5% Interest";
+            this.label6.Text = "5% Interest without Market Selection";
             // 
             // btnStocks
             // 
