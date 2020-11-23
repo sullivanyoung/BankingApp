@@ -131,6 +131,7 @@ namespace BankingApplication
             this.btnYear.TabIndex = 35;
             this.btnYear.Text = "1 Year";
             this.btnYear.UseVisualStyleBackColor = true;
+            this.btnYear.Click += new System.EventHandler(this.btnYear_Click);
             // 
             // btnWeek
             // 
@@ -140,6 +141,7 @@ namespace BankingApplication
             this.btnWeek.TabIndex = 36;
             this.btnWeek.Text = "1 Week";
             this.btnWeek.UseVisualStyleBackColor = true;
+            this.btnWeek.Click += new System.EventHandler(this.btnWeek_Click);
             // 
             // gpbCompanies
             // 
@@ -224,6 +226,7 @@ namespace BankingApplication
             this.btnMonth.TabIndex = 38;
             this.btnMonth.Text = "1 Month";
             this.btnMonth.UseVisualStyleBackColor = true;
+            this.btnMonth.Click += new System.EventHandler(this.btnMonth_Click);
             // 
             // lblOutput
             // 

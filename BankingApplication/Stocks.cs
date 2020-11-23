@@ -27,7 +27,8 @@ namespace BankingApplication
     {
         public static decimal[] percents = { -.10M, -.05M, -.01M, .01M, .05M, .07M, .10M, .14M, .18M, .25M };
         public static Random random = new Random();
-        decimal currentBalance = Home.currentBalance;
+        public static decimal currentBalance = Home.currentBalance;
+        public static decimal timeAmount = 1M;
         public Stocks()
         {
             InitializeComponent();
@@ -379,7 +380,7 @@ namespace BankingApplication
                             {
                                 MessageBox.Show("Your Return: " + Convert.ToString((acer * 100) + "%"));
                                 lbxOutput.Items.Add("You purchased: Acer Stock.");
-                                currentBalance = currentBalance + (acer * investedAmount);
+                                currentBalance = currentBalance + (acer * investedAmount * timeAmount);
                                 lblCurrentBalance.Text = "$" + Convert.ToString(Math.Round(currentBalance, 2));
                                 lbxOutput.Items.Add("Your new balance: " + "$" + Convert.ToString(Math.Round(currentBalance, 2)));
                             }
@@ -700,6 +701,24 @@ namespace BankingApplication
             {
                 lblOutput.Text = "You do not have enough money to invest.";
             }
+        }
+
+        private void btnWeek_Click(object sender, EventArgs e)
+        {
+            timeAmount = 7; //number of days in a week
+            lblOutput.Text = "You have selected to move forward 1 week";
+        }
+
+        private void btnMonth_Click(object sender, EventArgs e)
+        {
+            timeAmount = 30.42M; //average amount of days in a normal year
+            lblOutput.Text = "You have selected to move forwward 1 month";
+        }
+
+        private void btnYear_Click(object sender, EventArgs e)
+        {
+            timeAmount = 365; //normal amount of days in a year
+            lblOutput.Text = "You have selected to move forward 1 year";
         }
     }
 }

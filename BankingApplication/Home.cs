@@ -12,7 +12,7 @@ namespace BankingApplication
 {
     public partial class Home : Form
     {
-        public static decimal currentBalance = 0;
+        public static decimal currentBalance;
         decimal interest = .05M;
         public Home()
         {
@@ -115,6 +115,12 @@ namespace BankingApplication
         private void lbxBalance_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void Home_Load(object sender, EventArgs e)
+        {
+            //currentBalance = Stocks.currentBalance;
+            //lblBalance.Text = "$" + Convert.ToString(currentBalance);
         }
     }
 }
