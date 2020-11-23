@@ -80,11 +80,13 @@ namespace BankingApplication
         private void btnBull_Click(object sender, EventArgs e)
         {
             interest = .10M;
+            lbxBalance.Items.Add("This will simulate a bull market with 10% interest.");
         }
 
         private void btnBear_Click(object sender, EventArgs e)
         {
             interest = .02M;
+            lbxBalance.Items.Add("This will simulate a bear market with 2% interest.");
         }
 
         private void btnClear_Click(object sender, EventArgs e)
@@ -108,6 +110,11 @@ namespace BankingApplication
         private void btnClose_Click(object sender, EventArgs e)
         {
             Application.Exit(); 
+        }
+
+        private void lbxBalance_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
