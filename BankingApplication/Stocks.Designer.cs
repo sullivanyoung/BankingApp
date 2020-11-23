@@ -47,6 +47,7 @@ namespace BankingApplication
             this.cbxApple = new System.Windows.Forms.CheckBox();
             this.cbxAcer = new System.Windows.Forms.CheckBox();
             this.btnMonth = new System.Windows.Forms.Button();
+            this.lblOutput = new System.Windows.Forms.Label();
             this.gpbCompanies.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -224,11 +225,20 @@ namespace BankingApplication
             this.btnMonth.Text = "1 Month";
             this.btnMonth.UseVisualStyleBackColor = true;
             // 
+            // lblOutput
+            // 
+            this.lblOutput.AutoSize = true;
+            this.lblOutput.Location = new System.Drawing.Point(478, 363);
+            this.lblOutput.Name = "lblOutput";
+            this.lblOutput.Size = new System.Drawing.Size(0, 13);
+            this.lblOutput.TabIndex = 39;
+            // 
             // Stocks
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(854, 560);
+            this.Controls.Add(this.lblOutput);
             this.Controls.Add(this.btnMonth);
             this.Controls.Add(this.gpbCompanies);
             this.Controls.Add(this.btnWeek);
@@ -271,5 +281,6 @@ namespace BankingApplication
         private System.Windows.Forms.CheckBox cbxApple;
         private System.Windows.Forms.CheckBox cbxAcer;
         private System.Windows.Forms.Button btnMonth;
+        private System.Windows.Forms.Label lblOutput;
     }
 }
